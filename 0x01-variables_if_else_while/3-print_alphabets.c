@@ -5,12 +5,12 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void){
-  for(int i ='a';i<='z';i++){
-    putchar(i);
-  }
-  for(int j ='A';j<='Z';j++){
-    putchar(j);
-  }
-  putchar('\n');
+int main(void)
+{
+char c;
+for (c = 'a'; c <= 'z'; c++)
+putchar(c);
+for (c = 'A'; c <= 'Z'; c++)
+putchar(c);
+putchar('\n');
 }
