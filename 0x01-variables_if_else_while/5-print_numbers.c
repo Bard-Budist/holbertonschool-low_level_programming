@@ -6,7 +6,9 @@
  */
 int main(void)
 {
-  for (int i='a';i <='z'; i++){
-    putchar(i);
-  }
+char c;
+for (c = 0; c <= 9; c++)
+printf("%i", c);
+putchar('\n');
+return (0);
 }
