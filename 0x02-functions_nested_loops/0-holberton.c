@@ -7,10 +7,10 @@
 
 int main(void)
 {
-	char c[] = {'H','o','l','b','e','r','t','o','n'};
+	char c[] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
 	int i;
-	for(i = 0; i < 9 ; i++)
+	for(i = 0; i < 9 ; i++ )
 		_putchar(c[i]);
-	_putchar('\n');
+	_putchar ('\n');|:
 	return (0);
 }
