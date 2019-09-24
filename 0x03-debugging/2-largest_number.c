@@ -24,6 +24,18 @@ else if (c > a && c > b)
 {
 largest = c;
 }
+else if (a == b && c > a)
+{
+largest = c;
+}
+else if (c == b && a > c)
+{
+largest = a;
+}
+else if (a == c && b > a)
+{
+largest = b;
+}
 
 return (largest);
 }
