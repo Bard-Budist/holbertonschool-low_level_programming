@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
-  * times_table - writes the character c to stdout
-  *
-  * On error, -1 is returned, and errno is set appropriately.
-  */
+ * times_table - writes the character c to stdout
+ *
+ * On error, -1 is returned, and errno is set appropriately.
+*/
 void times_table(void)
 {
 int a, b, c;
