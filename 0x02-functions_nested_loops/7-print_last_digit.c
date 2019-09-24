@@ -5,9 +5,10 @@
 *
 * Return: Value of c
 */
-int print_last_digit(int c)
+int print_last_digit(int n)
 {
-int i = (c > 0) ? c % 10 : (c * -1) % 10;
+int i = (n < 0) ? n % 10 : ((n * -1) % 10);
 _putchar(i + '0');
 return (i);
 }
+
