@@ -2,8 +2,8 @@
 #include <time.h>
 #include <stdio.h>
 /**
-  * main - Entry point
-  *
+  * positive_or_negative - Entry point
+  * @n: :D
   * Return: Always 0 (Success)
 */
 
