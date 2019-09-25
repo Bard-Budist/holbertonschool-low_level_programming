@@ -9,7 +9,7 @@ int main(void)
 long num1 = 0;
 long num2 = 1;
 long aux, i;
-for (i = 0; i < 52; i++)
+for (i = 0; i < 53; i++)
 {
 aux = num1 + num2;
 printf("%ld", aux);
