@@ -16,7 +16,7 @@ if (c < 10)
 {
 if (b == 0)
 {
-_putchar(c +'0');
+_putchar(c + '0');
 }
 else
 {
