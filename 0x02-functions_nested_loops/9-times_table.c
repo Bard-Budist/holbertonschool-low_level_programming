@@ -20,9 +20,9 @@ _putchar(c + '0');
 }
 else
 {
-_putchar(' ');
-_putchar(' ');
 _putchar(',');
+_putchar(' ');
+_putchar(' ');
 _putchar(c + '0');
 }
 }
