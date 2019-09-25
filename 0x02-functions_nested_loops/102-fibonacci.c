@@ -16,4 +16,5 @@ printf("%d, ", aux);
 num1 = num2;
 num2 = aux;
 }
+return (0);
 }
