@@ -15,12 +15,16 @@ c = a * b;
 if (c < 10)
 {
 if (b == 0)
+{
 _putchar(c +'0');
-
+}
+else
+{
 _putchar(' ');
 _putchar(' ');
 _putchar(',');
 _putchar(c + '0');
+}
 }
 else
 {
