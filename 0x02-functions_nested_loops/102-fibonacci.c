@@ -9,11 +9,11 @@ int main(void)
 long num1 = 0;
 long num2 = 1;
 long aux, i;
-for (i = 0; i <= 53; i++)
+for (i = 0; i < 53; i++)
 {
 aux = num1 + num2;
 printf("%ld", aux);
-if (i != 53)
+if (i != 52)
 putchar(',');
 num1 = num2;
 num2 = aux;
