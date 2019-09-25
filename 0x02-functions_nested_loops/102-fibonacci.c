@@ -12,9 +12,12 @@ int aux, i;
 for (i = 0; i < 50; i++)
 {
 aux = num1 + num2;
-printf("%d, ", aux);
+printf("%d", aux);
+if (i != 49)
+putchar(',');
 num1 = num2;
 num2 = aux;
 }
+putchar('\n');
 return (0);
 }
