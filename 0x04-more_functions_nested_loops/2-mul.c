@@ -5,7 +5,7 @@
  * @b: Second value
  * Return: Valur * 2
  */
-int mul (int a, int b)
+int mul(int a, int b)
 {
 	return (a * b);
 }
