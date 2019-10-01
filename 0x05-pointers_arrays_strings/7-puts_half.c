@@ -14,7 +14,7 @@ str2++;
 len++;
 i++;
 }
-for (i = ((len % 2 == 1) ? (len - 1) / 2 : len / 2) ; i <= len; i++)
+for (i = ((len % 2 == 1) ? (len - 1) / 2 : len / 2) ; i < len; i++)
 {
 char t = str[i];
 _putchar(t);
