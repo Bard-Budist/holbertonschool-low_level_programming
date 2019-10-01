@@ -7,8 +7,14 @@
 */
 void puts2(char *str)
 {
-int i;
-for (i = 0; i <= 9; i= i + 2)
+char *t = str;
+int i, len = 0;
+while (*t)
+{
+t++;
+len++;
+}
+for (i = 0; i <= len; i= i + 2)
 {
 _putchar(str[i]);
 }
