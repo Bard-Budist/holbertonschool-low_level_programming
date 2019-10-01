@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- *
- *
+ * print_rev - Print String reverse
+ * @s: Parameter String
  *
  *
  *
