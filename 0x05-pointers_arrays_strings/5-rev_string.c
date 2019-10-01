@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_rev - Print String reverse
+ * rev_string - Print String reverse
  * @s: Parameter String
  *
  *
@@ -8,12 +8,12 @@
 */
 void rev_string(char *s)
 {
-int l= 0, i;
-char *end , *str ,c , *p ;
+int l = 0, i;
+char *end, *str, c, *p;
 end = s;
 str = s;
 p = s;
-while(*p)
+while (*p)
 {
 l++;
 p++;
