@@ -10,19 +10,13 @@
 */
 char *string_toupper(char *a)
 {
-int i = 0, c;
+int i = 0;
 while (a[i] != '\0')
 {
 i++;
-}
-c = i;
-for (i = 0; i < c - 1; i++)
-{
 if (a[i] >= 97 && a[i] <= 122)
 {
-char c = a[i];
-c -= 32;
-a[i] = c;
+a[i] -= 32;
 }
 }
 return (a);
