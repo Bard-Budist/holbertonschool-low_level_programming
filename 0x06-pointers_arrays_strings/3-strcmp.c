@@ -11,8 +11,11 @@ int i = 0;
 int band = 0;
 while (s1[i] != '\0' && s2[i] != '\0')
 {
-	i++;
+	if (s1[i] == s1[i])
 	band = 1;
+	else
+	band = 0;
+	i++;
 }
 if (band != 0)
 {
