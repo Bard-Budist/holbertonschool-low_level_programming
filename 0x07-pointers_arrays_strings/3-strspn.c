@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
+ * _strspn - fadwad
+ * @s: String
+ * @accept: Char accept
  *
- *
- *
- *
- *
+ * Return: int
  *
 */
 unsigned int _strspn(char *s, char *accept)
