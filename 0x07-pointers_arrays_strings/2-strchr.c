@@ -19,8 +19,9 @@ s += i;
 t = s;
 break;
 }
-else 
+else
 t = "";
+t++;
 i++;
 }
 return (t);
