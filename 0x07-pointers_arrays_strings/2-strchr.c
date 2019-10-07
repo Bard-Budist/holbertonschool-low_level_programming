@@ -17,7 +17,6 @@ if (s[i] == c)
 {
 s += i;
 t = s;
-break;
 }
 else
 t = ((void *)0);
