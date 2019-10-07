@@ -19,8 +19,6 @@ s += i;
 t = s;
 break;
 }
-else
-t = ((void *)0);
 i++;
 }
 return (t);
