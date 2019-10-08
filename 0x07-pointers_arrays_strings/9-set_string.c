@@ -1,14 +1,12 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ * set_string
+ * @s: Parameter
+ * @to: Parameter
  *
  *
 */
 void set_string(char **s, char *to)
 {
-char *t = s;
-*to = &t;
+	*s = to;
 }
