@@ -15,6 +15,8 @@ int is_palindrome(char *s)
 char *t = s;
 int n = (end(t));
 t = t + (n - 1);
+if (s == 0 && t == 0)
+	return (1);
 if (*s != *t)
 	return (0);
 return (combine(s, t, n));
