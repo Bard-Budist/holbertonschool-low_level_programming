@@ -1,10 +1,10 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- *
- *
- *
- *
+ * main -  Main program
+ * @argc: number arguments
+ * @argv: Argumentes
+ * Return: 0
  *
 */
 int main(int argc, char *argv[])
