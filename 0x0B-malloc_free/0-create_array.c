@@ -13,9 +13,10 @@ if (size == 0)
 return (NULL);
 
 p = malloc(sizeof(char) * size);
-while (size--)
+while (size > 0)
 {
 p[size] = c;
+size--;
 }
 return (p);
 
