@@ -18,6 +18,7 @@ else
 {
 while (str[a] != '\0')
 a++;
+a++;
 p = malloc(a *sizeof(char));
 if (p == 0)
 return (NULL);
@@ -26,6 +27,7 @@ while (i < a)
 p[i] = str[i];
 i++;
 }
+free(str);
 return (p);
 }
 }
