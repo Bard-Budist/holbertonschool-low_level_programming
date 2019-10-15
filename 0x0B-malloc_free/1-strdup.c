@@ -23,8 +23,7 @@ if (p == 0)
 return (NULL);
 while (i < a)
 {
-p[i] = *str;
-str++;
+p[i] = str[i];
 i++;
 }
 return (p);
