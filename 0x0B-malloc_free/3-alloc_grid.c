@@ -16,11 +16,19 @@ int **arr;
 int i, j;
 arr = malloc(width + 1  * (sizeof(int)));
 for (i = 0; i < width; i++)
-arr[i] =malloc(height * (sizeof(int)));
-
-if (arr == NULL)
+{
+arr[i] = malloc(height * (sizeof(int)));
+if (arr[i] == NULL)
+{
+free(arr[i]);
 return (NULL);
-
+}
+}
+if (arr == NULL)
+{
+free(arr);
+return (NULL);
+}
 for (i = 0; i < width; i++)
 {
 for (j = 0; j < height; j++)
