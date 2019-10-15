@@ -12,10 +12,12 @@ char *str_concat(char *s1, char *s2)
 {
 char *p;
 unsigned int t1 = 0, t2 = 0, i = 0;
-if (s1 == 0 || s2 == 0)
-return (NULL);
-else
-{
+if (s1 == NULL)
+s1 = "";
+if (s2 == NULL)
+s2 = "";
+
+
 while (s1[t1] != '\0')
 t1++;
 while (s2[t2] != '\0')
@@ -39,6 +41,6 @@ i++;
 }
 p[t1 + t2] = '\0';
 return (p);
-}
+
 
 }
