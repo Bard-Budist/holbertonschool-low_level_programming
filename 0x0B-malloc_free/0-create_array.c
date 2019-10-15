@@ -14,12 +14,12 @@ return (NULL);
 else
 {
 
-p = malloc(sizeof(char) * size);
+p = malloc(sizeof(char *) * size);
 while (size--)
 {
 p[size] = c;
 }
 return (p);
 }
-return (p);
+return (NULL);
 }
