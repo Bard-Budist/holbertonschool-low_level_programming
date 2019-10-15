@@ -9,19 +9,22 @@
 */
 int main(int argc, char *argv[])
 {
-int sum = 0;
+int sum = 0, i = 0;
 if (argc == 1)
 printf("0\n");
 else
 {
 while (argc--)
 {
-if ((*argv[0] > 'a' && *argv[0] <= 'z')  ||
-		(*argv[0] > 'A' && *argv[0] <= 'Z'))
+
+if ((*argv[i] > 'a' && *argv[i] <= 'z')  ||
+		(*argv[i] > 'A' && *argv[i] <= 'Z')
+		|| *argv[i] == '-')
 {
 printf("Error\n");
 return (1);
 }
+
 sum += atoi(*argv);
 argv++;
 }
