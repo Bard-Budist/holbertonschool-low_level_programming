@@ -20,7 +20,11 @@ while (s1[t1])
 t1++;
 while (s2[t2])
 t2++;
+t1++;
+t2++;
 p = malloc((t1 + t2) *(sizeof(char)));
+if (p == 0)
+return (NULL);
 while (i < t1)
 {
 p[i] = *s1;
