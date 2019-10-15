@@ -27,7 +27,6 @@ while (i < a)
 p[i] = str[i];
 i++;
 }
-free(str);
 return (p);
 }
 }
