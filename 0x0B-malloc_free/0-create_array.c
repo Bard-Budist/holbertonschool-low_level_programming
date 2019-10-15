@@ -13,7 +13,7 @@ if (size == 0)
 return (NULL);
 
 p = malloc(sizeof(char) * size);
-while (--size)
+while (size--)
 {
 p[size] = c;
 }
