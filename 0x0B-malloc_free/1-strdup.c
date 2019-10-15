@@ -1,0 +1,30 @@
+#include "holberton.h"
+#include <stdlib.h>
+/**
+ * _strdup - str
+ * @str: String paramter
+ * Return: Char
+ *
+ *
+ *
+*/
+char *_strdup(char *str)
+{
+unsigned int a = 0, i = 0;
+if (str == 0)
+return (NULL);
+else
+{
+while (str[a] != 0)
+a++;
+char *p = malloc(a *(sizeof(char)));
+while (i < a)
+{
+p[i] = *str;
+str++;
+i++;
+}
+return (p);
+}
+return (NULL);
+}
