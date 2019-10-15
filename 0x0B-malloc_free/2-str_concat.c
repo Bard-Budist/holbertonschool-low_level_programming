@@ -20,6 +20,9 @@ while (s1[t1] != '\0')
 t1++;
 while (s2[t2] != '\0')
 t2++;
+
+
+t2++;
 p = malloc((t1 + t2) *(sizeof(char)));
 if (p == 0)
 return (NULL);
