@@ -14,20 +14,21 @@ else
 {
 int **arr;
 int i, j;
-arr =(int **)(malloc(width + 1  * (sizeof(int))));
+arr = (int **)(malloc(width + 1  * (sizeof(int))));
+if (arr == NULL)
+return (NULL);
 for (i = 0; i < width; i++)
 {
-arr[i] =(int *) (malloc(height * (sizeof(int))));
+arr[i] = (int *) (malloc(height * (sizeof(int))));
 if (arr[i] == NULL)
 {
-free(arr[i]);
-return (NULL);
-}
-}
-if (arr == NULL)
+while (arr[i])
 {
-free(arr);
+free(arr[i]);
+i--;
+}
 return (NULL);
+}
 }
 for (i = 0; i < width; i++)
 {
