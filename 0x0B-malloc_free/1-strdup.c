@@ -19,7 +19,7 @@ else
 while (str[a] != '\0')
 a++;
 p = malloc(a *sizeof(char));
-if (p == NULL)
+if (p == 0)
 return (NULL);
 while (i < a)
 {
