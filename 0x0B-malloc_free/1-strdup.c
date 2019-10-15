@@ -17,7 +17,9 @@ else
 {
 while (str[a] != 0)
 a++;
-char *p = malloc(a *(sizeof(char)));
+char *p = malloc(a *sizeof(char));
+if (p == NULL)
+return (NULL);
 while (i < a)
 {
 p[i] = *str;
