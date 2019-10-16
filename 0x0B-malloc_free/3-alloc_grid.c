@@ -13,7 +13,7 @@ return (NULL);
 else
 {
 int i, j;
-int **arr = (int **)(malloc(height * (sizeof(int *))));
+int **arr = (malloc(height * (sizeof(int *))));
 if (arr == NULL)
 {
 free(arr);
@@ -21,7 +21,7 @@ return (NULL);
 }
 for (i = 0; i < height; i++)
 {
-arr[i] = (int *) (malloc(width * (sizeof(int))));
+arr[i] = (malloc(width * (sizeof(int))));
 if (arr[i] == NULL)
 {
 for (j = i; j >= 0; j--)
