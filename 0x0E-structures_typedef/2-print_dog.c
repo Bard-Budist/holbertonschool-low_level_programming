@@ -9,14 +9,10 @@ void print_dog(struct dog *d)
 {
 	if (d) {
 	char *namec = (((*d).name) ? ((*d).name) : "(nil)");
-	float agec = (((*d).age) ? ((*d).age) : -1);
 	char *ownerc = ((*d).name) ? ((*d).owner) : "(nil)";
 
 	printf("Name: %s\n", namec);
-	if (agec == -1)
-		printf("Age: (nil)\n");
-	else
-		printf("Age: %lf\n", agec);
+	printf("Age: %f\n", d->age);
 	printf("Owner: %s\n", ownerc);
 
 	}
