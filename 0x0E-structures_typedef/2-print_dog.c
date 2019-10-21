@@ -7,23 +7,16 @@
 */
 void print_dog(struct dog *d)
 {
-	struct dog my_dog;
-	my_dog = d;
-	if (my_dog != NULL)
-	{
-		if (my_dog->name == NULL)
-			printf("Name: (nil)/n");
-		else
-			printf("Name: %s\n", d->name);
+	char *namec = (((*d).name) ? ((*d).name) : "(nil)");
+	float agec = (((*d).age) ? ((*d).age) : -1);
+	char *ownerc = ((*d).name) ? ((*d).owner) : "(nil)";
 
-		if (!my_dog->age)
-			printf("Name: (nil)\n");
-		else
-			printf("Age: %lf\n", d->age);
+	printf("Name: %s\n", namec);
+	if (agec == -1)
+		printf("Age: (nil)\n");
+	else
+		printf("Age: %lf\n", agec);
+	printf("Owner: %s\n", ownerc);
 
-		if (my_dog->owner == NULL)
-			printf("Name: (nil)\n");
-		else
-			printf("Owner: %s\n", d->owner);
 	}
 }
