@@ -12,48 +12,43 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	int i, cn = 0, co = 0;
-	char *nameC;
-	char *ownerC;
-	struct dog *doge;
+	dog_t *doge;
 
 	if (name == NULL || owner == NULL)
-	{
-	return (NULL);
-	}
-	while (name[cn] != '\0')
-	cn++;
-
-	while (owner[co] != '\0')
-	co++;
-	nameC = malloc(cn * sizeof(char));
-	if (nameC == NULL)
-	{
-		free(nameC);
 		return (NULL);
-	}
-	ownerC = malloc(co * sizeof(char));
-	if (ownerC == NULL)
-	{
-		free(ownerC);
-		return (NULL);
-	}
-	doge = malloc(sizeof(struct dog));
+	doge = malloc(sizeof(dog_t));
 	if (doge == NULL)
 	{
 		free(doge);
 		return (NULL);
 	}
-
+	while (name[cn] != '\0')
+	cn++;
+	cn++;
+	doge->name = malloc(cn * sizeof(char));
+	if (doge->name == NULL)
+	{
+		free(doge->name);
+		return (NULL);
+	}
 	for (i = 0; i < cn; i++)
 	{
-	nameC[i] = name[i];
+	doge->name[i] = name[i];
+	}
+	doge->age = age;
+
+	while (owner[co] != '\0')
+	co++;
+	co++;
+	doge->owner = malloc(co * sizeof(char));
+	if (doge->owner == NULL)
+	{
+		free(doge->owner);
+		return (NULL);
 	}
 	for (i = 0; i < co; i++)
 	{
-		ownerC[i] = owner[i];
+		doge->owner[i] = owner[i];
 	}
-	doge->name = name;
-	doge->age = age;
-	doge->owner = owner;
 	return (doge);
 }
