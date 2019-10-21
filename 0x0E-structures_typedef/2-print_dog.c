@@ -7,7 +7,8 @@
 */
 void print_dog(struct dog *d)
 {
-	if (d) {
+	if (d)
+	{
 	char *namec = (((*d).name) ? ((*d).name) : "(nil)");
 	char *ownerc = ((*d).name) ? ((*d).owner) : "(nil)";
 
