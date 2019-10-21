@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
 * new_dog - The Dogeeeeee :D
 * @name: Name of Dogeeeeee
@@ -10,16 +11,16 @@
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog_t *doge = malloc(sizeof(struct dog_t));
+	struct dog *doge = malloc(sizeof(struct dog));
 
 	if (doge == NULL)
 	return (NULL);
 	char *nameC = name;
 	char *ownerC = owner;
 
-	doge.name = nameC;
-	doge.age = age;
-	doge.owner = ownerC;
+	doge->name = nameC;
+	doge->age = age;
+	doge->owner = ownerC;
 
 	return (doge);
 }
