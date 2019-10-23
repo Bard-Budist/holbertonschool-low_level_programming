@@ -9,8 +9,7 @@
 */
 int main(int argc, char **argv)
 {
-	char *c = NULL;
-	c = argv[2];
+	
 	int  num1, num2;
 	int (*funcion)(int, int);
 	if ((argc >= 0 && argc <= 3) || (argv == NULL))
@@ -18,7 +17,9 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	else if (c[0] != '+' && c[0] != '-' && c[0] != '*' && c[0] != '/' && c[0] != '%')
+	char *c;
+	c = argv[2];
+	if (c[0] != '+' && c[0] != '-' && c[0] != '*' && c[0] != '/' && c[0] != '%')
 	{
 		printf("Error\n");
 		exit(99);
@@ -30,6 +31,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
+		
 		num1 = atoi(argv[1]);
 		num2 = atoi(argv[3]);
 		funcion = get_op_func(c);
