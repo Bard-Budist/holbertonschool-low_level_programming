@@ -9,7 +9,7 @@
 */
 int main(int argc, char **argv)
 {
-	int  num1, num2;
+	int  num1 = 0, num2 = 0, resul = 0;
 	int (*funcion)(int, int);
 
 	if (argc != 4)
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	int resul = funcion(num1, num2);
+	resul = funcion(num1, num2);
 
 	printf("%i\n", resul);
 	return (0);
