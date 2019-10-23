@@ -9,35 +9,29 @@
 */
 int main(int argc, char **argv)
 {
-	
 	int  num1, num2;
+	char *c;
+
+	c = argv[2];
 	int (*funcion)(int, int);
-	if ((argc >= 0 && argc <= 3) || (argv == NULL))
+
+	funcion = get_op_func(c);
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	char *c;
-	c = argv[2];
-	if (c[0] != '+' && c[0] != '-' && c[0] != '*' && c[0] != '/' && c[0] != '%')
+
+	if (funcion == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	else if (c[0] == 47 && atoi(argv[3]) == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	else
-	{
-		
-		num1 = atoi(argv[1]);
-		num2 = atoi(argv[3]);
-		funcion = get_op_func(c);
-		int resul = funcion(num1, num2);
-		printf("%i\n", resul);
-	}
-	return (0);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
+	int resul = funcion(num1, num2);
+
+	printf("%i\n", resul);
+	return (0);
 }
