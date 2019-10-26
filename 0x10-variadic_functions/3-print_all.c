@@ -13,8 +13,7 @@ void print_all(const char * const format, ...)
 	char *test;
 	va_list valist;
 
-	while (format && format[i])
-	{
+	
 		va_start(valist, format);
 		while (format[i])
 		{
@@ -22,15 +21,19 @@ void print_all(const char * const format, ...)
 			switch (format[i++])
 			{
 			case 'c':
+				printf("%i", i);
 				printf("%c", va_arg(valist, int));
 				break;
 			case 'i':
+			printf("%i", i);
 				printf("%i", va_arg(valist, int));
 				break;
 			case 'f':
+			printf("%i", i);
 				printf("%f", va_arg(valist, double));
 				break;
 			case 's':
+			printf("%i", i);
 				test = va_arg(valist, char *);
 				if (test == NULL)
 				{
@@ -42,9 +45,9 @@ void print_all(const char * const format, ...)
 					j = 0;
 					break;
 			}
-		if (format[i] && j)
+		if (format[i] && j == 1)
 		printf(", ");
-	}
+	
 	va_end(valist);
 	}
 	printf("\n");
