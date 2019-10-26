@@ -3,15 +3,15 @@ SECTION .DATA
 	helloLen:  equ $-hello
 
 SECTION .TEXT
-	GLOBAL _start
+	GLOBAL main
 
-_start:
+main:
 	mov rax,1
 	mov rbx,1
 	mov rcx,hello
 	mov rdx,helloLen
 	syscall
 
-	mov rax,1
+	mov rax,60
 	mov rbx,0
 	syscall
