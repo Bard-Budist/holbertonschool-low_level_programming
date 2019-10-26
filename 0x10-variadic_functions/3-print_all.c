@@ -10,8 +10,9 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0, j;
-	char *string;
+	char *test;
 	va_list valist;
+
 	while (format && format[i])
 	{
 		va_start(valist, format);
@@ -30,21 +31,19 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(valist, double));
 				break;
 			case 's':
-				string = va_arg(valist, char *);
-				if (string == NULL)
+				test = va_arg(valist, char *);
+				if (test == NULL)
 				{
-					string = "(nil)";
+					test = "(nil)";
 				}
-				printf("%s", string);
+				printf("%s", test);
 				break;
 			default:
 					j = 0;
 					break;
 			}
 		if (format[i] && j)
-		{
 		printf(", ");
-		}
 	}
 	va_end(valist);
 	}
