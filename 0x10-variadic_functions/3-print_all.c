@@ -12,9 +12,9 @@ void print_all(const char * const format, ...)
 	va_list list;
 
 	va_start(list, format);
-	char *cadena;
+	char *cadena, c;
 
-	while (format && format[i])
+	while (format[i])
 	{
 		switch (format[i])
 		{
@@ -39,7 +39,7 @@ void print_all(const char * const format, ...)
 		default:
 			break;
 		}
-		char c = format[i];
+		c = format[i];
 
 		if (format[i + 1] && (c == 'c' || c == 'i' || c == 'f' || c == 's'))
 			printf(", ");
