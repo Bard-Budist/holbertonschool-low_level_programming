@@ -13,7 +13,8 @@ void print_all(const char * const format, ...)
 	char *test;
 	va_list valist;
 
-
+	while (format && format[i])
+	{
 		va_start(valist, format);
 		while (format[i])
 		{
@@ -43,7 +44,7 @@ void print_all(const char * const format, ...)
 			}
 		if (format[i] && j == 1)
 		printf(", ");
-	
+	}
 	va_end(valist);
 	}
 	printf("\n");
