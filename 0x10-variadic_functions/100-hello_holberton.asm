@@ -1,7 +1,3 @@
-SECTION .DATA
-	hello:     db 'Hello, Holberton',10
-	helloLen:  equ $-hello
-
 SECTION .TEXT
 	GLOBAL main
 
@@ -15,3 +11,7 @@ main:
 	mov rax,60
 	mov rbx,0
 	syscall
+
+SECTION .DATA
+	hello:     db 'Hello, Holberton',10
+	helloLen:  equ $-hello
