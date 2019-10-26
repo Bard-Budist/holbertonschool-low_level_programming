@@ -1,50 +1,52 @@
-#include <stdarg.h>
-#include <stdio.h>
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdarg.h>
 /**
- * print_all - Print all
- * @format: Format
- *
+* print_all - function that print strings
+* @format: list of arguments c, i, f, *s
+* Return: -vacio
 */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	va_list list;
-
-	va_start(list, format);
-	char *cadena, c;
-
-	while (format[i])
+	unsigned int i = 0, j;
+	char *string;
+	va_list valist;
+	while (format && format[i])
 	{
-		switch (format[i])
+		va_start(valist, format);
+		while (format[i])
 		{
-		case 'c':
-			printf("%c", va_arg(list, int));
-			break;
-		case 'i':
-			printf("%i", va_arg(list, int));
-			break;
-		case 'f':
-			printf("%f", va_arg(list, double));
-			break;
-		case 's':
-			cadena = va_arg(list, char*);
-			if (cadena == NULL)
+			j = 1;
+			switch (format[i++])
 			{
-				printf("(nil)");
+			case 'c':
+				printf("%c", va_arg(valist, int));
 				break;
+			case 'i':
+				printf("%i", va_arg(valist, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(valist, double));
+				break;
+			case 's':
+				string = va_arg(valist, char *);
+				if (string == NULL)
+				{
+					string = "(nil)";
+				}
+				printf("%s", string);
+				break;
+			default:
+					j = 0;
+					break;
 			}
-				printf("%s", cadena);
-			break;
-		default:
-			break;
+		if (format[i] && j)
+		{
+		printf(", ");
 		}
-		c = format[i];
-
-		if (format[i + 1] && (c == 'c' || c == 'i' || c == 'f' || c == 's'))
-			printf(", ");
-		i++;
 	}
-	va_end(list);
+	va_end(valist);
+	}
 	printf("\n");
 }
