@@ -1,18 +1,18 @@
 #include "lists.h"
 /**
- *
- *
- *
- *
+ * delete_nodeint_at_index - Deelete nodes
+ * @head: Head
+ * @index: index
+ * Return: int
  *
  *
 */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *new, *aux = *head;
-	unsigned int var = 1;
+	listint_t *new = NULL, *aux = *head;
+	unsigned int var = 0;
 
-	while (var < index + 1)
+	while (var < index)
 	{
 		if (aux != NULL)
 		{
