@@ -25,7 +25,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		}
 		if (index == temp)
 		{
-			if (*n != 0)
+			if (*n >= mul)
 			*n -= mul;
 			else
 			*n = 0;
