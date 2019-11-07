@@ -8,7 +8,7 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int cont = 0;
+	unsigned int temp = 0;
 
 	if	(index > 64)
 	{
@@ -16,14 +16,14 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 	else
 	{
-		while (n)
+		while (temp != index)
 		{
-			if (index == cont)
-			{
-				return (n % 2);
-			}
 			n /= 2;
-			cont++;
+			temp++;
+		}
+		if (index == temp)
+		{
+			return (n % 2);
 		}
 	}
 	return (-1);
