@@ -9,30 +9,9 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int temp = 0;
-	unsigned int mul = 1;
-
-	if (n == NULL)
-		return (-1);
-	if	(index > 64)
+	if (n != NULL)
 	{
-		return (-1);
-	}
-	else
-	{
-		while (temp != index)
-		{
-			mul *= 2;
-			temp++;
-		}
-		if (index == temp)
-		{
-			if (*n >= mul)
-			*n -= mul;
-			else
-			*n = 0;
-			return (1);
-		}
+		*n = (~(1 << index) & *n);
 	}
 	return (-1);
 }
