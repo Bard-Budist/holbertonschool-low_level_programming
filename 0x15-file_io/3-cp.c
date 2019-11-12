@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 		exit(98);
 	}
 	stateTo = open(argv[2], O_CREAT | O_RDWR | O_APPEND | O_TRUNC, 0664);
-	while ((count = read(stateFrom, buffer, 1024)) > 0)
+	while ((count = read(stateFrom, buffer, 1024)) != 0)
 	{
 		count = write(stateTo, buffer, count);
 		if	(count == -1)
