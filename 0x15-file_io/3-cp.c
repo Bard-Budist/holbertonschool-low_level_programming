@@ -25,6 +25,7 @@ int main(int argc, char const *argv[])
 		exit(98);
 	}
 	stateTo = open(argv[2], O_CREAT | O_RDWR | O_APPEND | O_TRUNC, 0664);
+
 	while ((count = read(stateFrom, buffer, 1024)) != 0)
 	{
 		count = write(stateTo, buffer, count);
@@ -37,13 +38,13 @@ int main(int argc, char const *argv[])
 	closeFrom = close(stateFrom);
 	if (closeFrom == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", closeFrom);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", closeFrom);
 		exit(100);
 	}
 	closeTo = close(stateTo);
 	if (closeTo == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", closeTo);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", closeTo);
 		exit(100);
 	}
 	return (0);
