@@ -10,7 +10,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int state, count = 0, write_ = 0;
 
-	state = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0600);
+	state = open(filename, O_RDWR | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR);
 	if (state == -1)
 		return (-1);
 	while (text_content[count])
