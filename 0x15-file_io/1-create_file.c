@@ -17,6 +17,11 @@ int create_file(const char *filename, char *text_content)
 		count++;
 	if (text_content != NULL)
 		write_ = write(state, text_content, count);
+	else
+	{
+		close(state);
+		return (1);
+	}
 
 	if (write_ == -1)
 		return (-1);
