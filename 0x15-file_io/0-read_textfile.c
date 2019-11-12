@@ -26,5 +26,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	size = read(state, buffer, letters);
 	dprintf(0, "%s", buffer);
 	close(state);
+	free(buffer);
 	return (size);
 }
