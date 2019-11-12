@@ -18,18 +18,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(letters);
 	if (buffer == NULL)
 		return (0);
-	state = open(filename, O_RDONLY + 600);
+	state = open(filename, O_RDONLY, 0600);
 	if (state == -1)
 	{
 		return (0);
 	}
 	size = read(state, buffer, letters);
-	if (size == -1)
-		return (0);
+	close(state);
 	count = write(STDOUT_FILENO, buffer, size);
 	if (count == -1)
 		return (0);
-	close(state);
 	free(buffer);
 	return (size);
 }
