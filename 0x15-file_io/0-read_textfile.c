@@ -25,7 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	size = read(state, buffer, letters);
 
-	if ((write(STDOUT_FILENO, buffer, size)) != (ssize_t)letters)
+	if ((write(STDOUT_FILENO, buffer, size)) != size)
 		return (0);
 	close(state);
 	free(buffer);
