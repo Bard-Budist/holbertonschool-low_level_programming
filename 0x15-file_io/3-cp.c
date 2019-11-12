@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ * main - main
+ * @argc: Argumments
+ * @argv: Count
+ * Return: Return
  *
  *
 */
