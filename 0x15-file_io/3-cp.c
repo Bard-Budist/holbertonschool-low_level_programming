@@ -7,7 +7,7 @@
  *
  *
 */
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
  * Return: Return
  *
 */
-void cp_function(char const *From, char const *To)
+void cp_function(char *From, char *To)
 {
 	char buffer[1024];
 	int stateFrom, stateTo, closeFrom, closeTo;
