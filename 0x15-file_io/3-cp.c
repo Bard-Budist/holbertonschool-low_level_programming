@@ -35,7 +35,7 @@ void cp_function(const char *From, const char *To)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", From);
 		exit(98);
 	}
-	stateTo = open(To, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	stateTo = open(To, O_CREAT | O_RDONLY | O_TRUNC, 0664);
 	while ((count = read(stateFrom, buffer, 1024)) > 0)
 	{
 		if	(write(stateTo, buffer, count) != count || stateTo == -1)
