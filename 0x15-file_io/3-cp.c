@@ -17,7 +17,13 @@ int main(int argc, char const *argv[])
 	cp_function(argv[1], argv[2]);
 	return (0);
 }
-
+/**
+ * cp_function - 2domain
+ * @From: Argumments
+ * @To: Count
+ * Return: Return
+ *
+*/
 void cp_function(char const *From, char const *To)
 {
 	char buffer[1024];
