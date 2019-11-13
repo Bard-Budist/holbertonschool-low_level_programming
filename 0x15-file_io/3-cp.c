@@ -53,13 +53,13 @@ void cp_function(const char *From, const char *To)
 	closeFrom = close(stateFrom);
 	if (closeFrom == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", closeFrom);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", stateFrom);
 		exit(100);
 	}
 	closeTo = close(stateTo);
 	if (closeTo == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", closeTo);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", stateTo);
 		exit(100);
 	}
 }
