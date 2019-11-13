@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
  * Return: Return
  *
 */
-void cp_function(char *From, char *To)
+void cp_function(const char *From, const char *To)
 {
 	char buffer[1024];
 	int stateFrom, stateTo, closeFrom, closeTo;
