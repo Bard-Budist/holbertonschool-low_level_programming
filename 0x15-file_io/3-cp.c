@@ -37,19 +37,18 @@ void cp_function(char const *From, char const *To)
 		exit(98);
 	}
 	stateTo = open(To, O_CREAT | O_RDWR | O_TRUNC, 0664);
-	if (stateTo == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", To);
-		exit(99);
-	}
 	while ((count = read(stateFrom, buffer, 1024)) > 0)
 	{
-		count = write(stateTo, buffer, count);
-		if	(count == -1)
+		if	(write(stateTo, buffer, count) != count || stateTo == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", To);
 			exit(99);
 		}
+	}
+	if (count == -1)
+	{
+		dprintf(STDERR_FILENO, "Usage: Error: Can't read from file %s\n", From);
+		exit(98);
 	}
 	closeFrom = close(stateFrom);
 	if (closeFrom == -1)
