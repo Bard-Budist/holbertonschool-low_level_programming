@@ -27,8 +27,7 @@ int main(int argc, char *argv[])
 void cp_function(const char *From, const char *To)
 {
 	char buffer[1024];
-	int stateFrom, stateTo, closeFrom, closeTo;
-	ssize_t count;
+	int stateFrom, stateTo, closeFrom, closeTo, count;
 
 	stateFrom = open(From, O_RDONLY);
 	if (stateFrom == -1 || From == NULL)
@@ -53,13 +52,13 @@ void cp_function(const char *From, const char *To)
 	closeFrom = close(stateFrom);
 	if (closeFrom == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", stateFrom);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", stateFrom);
 		exit(100);
 	}
 	closeTo = close(stateTo);
 	if (closeTo == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", stateTo);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", stateTo);
 		exit(100);
 	}
 }
