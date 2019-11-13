@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 {
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "cp file_from file_to\n");
 		exit(97);
 	}
 	cp_function(argv[1], argv[2]);
@@ -33,7 +33,7 @@ void cp_function(char const *From, char const *To)
 	stateFrom = open(From, O_RDONLY);
 	if (stateFrom == -1 || From == NULL)
 	{
-		dprintf(STDERR_FILENO, "Usage: Error: Can't read from file %s\n", From);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", From);
 		exit(98);
 	}
 	stateTo = open(To, O_CREAT | O_RDWR | O_TRUNC, 0664);
@@ -41,13 +41,13 @@ void cp_function(char const *From, char const *To)
 	{
 		if	(write(stateTo, buffer, count) != count || stateTo == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", To);
+			dprintf(STDERR_FILENO, "Can't write to %s\n", To);
 			exit(99);
 		}
 	}
 	if (count == -1)
 	{
-		dprintf(STDERR_FILENO, "Usage: Error: Can't read from file %s\n", From);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", From);
 		exit(98);
 	}
 	closeFrom = close(stateFrom);
