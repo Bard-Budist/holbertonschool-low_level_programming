@@ -31,7 +31,7 @@ void cp_function(char const *From, char const *To)
 	ssize_t count;
 
 	stateFrom = open(From, O_RDONLY);
-	if (stateFrom == -1)
+	if (stateFrom == -1 || From == NULL)
 	{
 		dprintf(STDERR_FILENO, "Usage: Error: Can't read from file %s\n", From);
 		exit(98);
