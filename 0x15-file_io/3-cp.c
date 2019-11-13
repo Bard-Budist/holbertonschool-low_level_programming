@@ -42,7 +42,7 @@ void cp_function(char const *From, char const *To)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", To);
 		exit(99);
 	}
-	while ((count = read(stateFrom, buffer, 1024)) != 0)
+	while ((count = read(stateFrom, buffer, 1024)) > 0)
 	{
 		count = write(stateTo, buffer, count);
 		if	(count == -1)
@@ -50,6 +50,11 @@ void cp_function(char const *From, char const *To)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", To);
 			exit(99);
 		}
+	}
+	if (count == -1)
+	{
+		dprintf(STDERR_FILENO, "Usage: Error: Can't read from file %s\n", From);
+		exit(98);
 	}
 	closeFrom = close(stateFrom);
 	if (closeFrom == -1)
