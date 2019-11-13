@@ -51,11 +51,6 @@ void cp_function(char const *From, char const *To)
 			exit(99);
 		}
 	}
-	if (count == -1)
-	{
-		dprintf(STDERR_FILENO, "Usage: Error: Can't read from file %s\n", From);
-		exit(98);
-	}
 	closeFrom = close(stateFrom);
 	if (closeFrom == -1)
 	{
