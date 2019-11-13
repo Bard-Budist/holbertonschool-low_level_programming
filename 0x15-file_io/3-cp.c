@@ -25,6 +25,11 @@ int main(int argc, char const *argv[])
 		exit(98);
 	}
 	stateTo = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	if (stateTo == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 	while ((count = read(stateFrom, buffer, 1024)) != 0)
 	{
 		count = write(stateTo, buffer, count);
