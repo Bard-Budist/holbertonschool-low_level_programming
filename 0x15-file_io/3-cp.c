@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
 void cp_function(const char *From, const char *To)
 {
 	char buffer[1024];
-	int stateFrom, stateTo, closeFrom, closeTo, count;
+	int stateFrom, stateTo, count;
 
 	stateFrom = open(From, O_RDONLY);
-	if (stateFrom == -1 || From == NULL)
+	if (From == NULL || stateFrom == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", From);
 		exit(98);
@@ -49,14 +49,12 @@ void cp_function(const char *From, const char *To)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", From);
 		exit(98);
 	}
-	closeFrom = close(stateFrom);
-	if (closeFrom == -1)
+	if (close(stateFrom) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", stateFrom);
 		exit(100);
 	}
-	closeTo = close(stateTo);
-	if (closeTo == -1)
+	if (close(stateTo) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", stateTo);
 		exit(100);
