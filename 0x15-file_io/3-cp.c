@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 {
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	cp_function(argv[1], argv[2]);
@@ -41,7 +41,7 @@ void cp_function(char const *From, char const *To)
 	{
 		if	(write(stateTo, buffer, count) != count || stateTo == -1)
 		{
-			dprintf(STDERR_FILENO, "Can't write to %s\n", To);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", To);
 			exit(99);
 		}
 	}
