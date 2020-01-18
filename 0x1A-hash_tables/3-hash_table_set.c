@@ -8,22 +8,15 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	int index = 0;
-	hash_node_t *new_node;
+	unsigned int index = 0;
 
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL || ht == NULL)
+	if (ht == NULL)
 		return (0);
-
-	new_node->value = _strdup((char *) value);
-	new_node->key = _strdup((char *) key);
 	index = key_index((unsigned char *)key, ht->size);
-	if (ht->array == NULL)
-		return (0);
-
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
-	return (1);
+	ht->array[index] = add_node(&ht->array[index], key, value);
+	if (ht->array[index] != NULL)
+		return (1);
+	return (0);
 }
 
 /**
