@@ -35,19 +35,18 @@ hash_node_t *add_node(hash_node_t **head, const char *str, const char *value)
 	{
 		return (NULL);
 	}
-	new_node->value = strdup(value);
-	new_node->key = strdup(str);
-	if (*head != NULL)
+	if  (*head != NULL && strcmp((*head)->key, str) == 0)
 	{
-		new_node->next = *head;
-		(*head) = new_node;
-		return (new_node);
+		free((*head)->value);
+		(*head)->value = strdup(value);
+		return (*head);
 	}
 	else
 	{
-		new_node->next = NULL;
+		new_node->value = strdup(value);
+		new_node->key = strdup(str);
+		new_node->next = *head;
 		(*head) = new_node;
-		return (*head);
 	}
-	return (NULL);
+	return (new_node);
 }
