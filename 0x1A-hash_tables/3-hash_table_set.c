@@ -29,7 +29,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 hash_node_t *add_node(hash_node_t **head, const char *str, const char *value)
 {
 	hash_node_t *new_node;
-	if  (*head != NULL && strcmp((*head)->key, str) == 0)
+
+	if (*head != NULL && strcmp((*head)->key, str) == 0)
 	{
 		free((*head)->value);
 		(*head)->value = strdup(value);
