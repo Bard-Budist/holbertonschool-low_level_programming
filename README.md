@@ -1,4 +1,6 @@
-# This repository is based on C, it contains the following projects
+# C repository, Awesome
+
+## This repository is based on C, it contains the following projects
 
 * 0x00. C - Hello, World
 * 0x01. C - Variables, if, else, while 
@@ -30,4 +32,3 @@
 * 0x1D. C - Binary trees
 * 0x1E. C - Search Algorithms
 * 0x15. C - File I/O
-* 0x16. C - Simple Shell 
